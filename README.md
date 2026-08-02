@@ -148,6 +148,8 @@ Key flags: `--distance`, `--base-power`, `--min-power`, `--arc` / `--no-arc`, `-
 
 ## Demo
 
+![EV on treadmill](demo/EVonTreadmill.gif)
+
 See `demo/` for a run video (drop `demo.mp4` in that folder).
 
 ## Status
