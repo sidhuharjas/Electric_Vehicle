@@ -50,6 +50,10 @@ Pure wheel odometry (`heading = (d_right − d_left) / wheelbase`) is available 
 
 Forward and lateral position are then reconstructed by resolving encoder-measured forward travel through the tracked heading (`forwardX += d_center·cos(heading)`, `lateralY += d_center·sin(heading)`) — a simple dead-reckoning model, but one that's only as good as the heading estimate feeding it, which is why the heading pipeline gets the most tuning attention.
 
+This is what that heading pipeline actually buys you — on a treadmill (wheels driven, zero net forward travel), the vehicle holds a straight heading with no lateral drift instead of walking off to one side, which is the whole point of the bias calibration + filtering above:
+
+![EV heading test on treadmill — tracks straight with no drift](demo/EVonTreadmill.gif)
+
 ### S-curve arc, by the numbers
 
 The bonus-can detour is generated from two sine-based envelopes rather than a fixed waypoint path, so it scales automatically to any target distance:
@@ -84,7 +88,7 @@ Nearly every constant in `main.cpp` exists because an earlier, simpler version o
 src/main.cpp     Onboard firmware (PlatformIO / Arduino framework)
 sim.py           Python simulator — mirrors main.cpp's control logic offline
 platformio.ini   Board/build configuration
-demo/            Demo video (drop demo.mp4 here)
+demo/            Demo images/gif (full video hosted on YouTube — see Demo section)
 include/, lib/   PlatformIO project scaffolding
 test/            PlatformIO test scaffolding
 ```
@@ -148,9 +152,9 @@ Key flags: `--distance`, `--base-power`, `--min-power`, `--arc` / `--no-arc`, `-
 
 ## Demo
 
-![EV on treadmill](demo/EVonTreadmill.gif)
+Full run video: **[watch on YouTube](https://youtu.be/6F0KFUp0sm0)** *(112MB — too large for a plain GitHub file; hosted unlisted on YouTube instead)*
 
-See `demo/` for a run video (drop `demo.mp4` in that folder).
+[![Watch the demo](https://img.youtube.com/vi/6F0KFUp0sm0/0.jpg)](https://youtu.be/6F0KFUp0sm0)
 
 ## Status
 
