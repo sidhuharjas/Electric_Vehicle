@@ -1,8 +1,22 @@
 # Electric Vehicle C — Autonomous Drive Controller
 
-Firmware and simulator for a Science Olympiad **Electric Vehicle (EV-C)** robot. The vehicle has to launch from a start line, drive a straight-line distance to a target with no onboard distance sensing beyond wheel encoders and an IMU, hit an optional bonus-can offset along the way, and stop as close as possible to a target distance *and* a target time — repeatably, run after run.
+Firmware and simulator for a Science Olympiad **Electric Vehicle (EV-C)** robot.
 
 This repo contains the onboard control firmware that actually drives the robot, and a Python simulator that mirrors the same control logic so the drive parameters can be tuned and visualized before ever touching hardware.
+
+## The event
+
+Science Olympiad EV-C is a build-and-drive event. The rules the controller is designed around:
+
+- The vehicle launches from a start line and drives a **straight-line distance to a target**.
+- It has **no onboard distance sensing** beyond wheel encoders and an IMU — no beacons, no external references, no line to follow.
+- It can optionally route out to a **bonus-can offset** partway through the run for extra points.
+- It has to **stop as close as possible to both a target distance and a target time** — not just distance alone.
+- All of the above has to happen **repeatably, run after run** — a single lucky run doesn't count for much; the score is the vehicle's worst run as much as its best one.
+
+Everything in `src/main.cpp` and the matching logic in `sim.py` exists to satisfy those five constraints at once, which is what most of the tuning surface below is actually fighting for.
+
+![EV-C vehicle](demo/evc.png)
 
 ## How it works
 
