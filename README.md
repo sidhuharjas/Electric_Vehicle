@@ -152,7 +152,7 @@ Key flags: `--distance`, `--base-power`, `--min-power`, `--arc` / `--no-arc`, `-
 
 ## Demo
 
-Full run video: **[watch on YouTube](https://youtu.be/H3o-4kwjt6M)** *(112MB — too large for a plain GitHub file; hosted unlisted on YouTube instead)*
+Full run video: **[watch on YouTube](https://youtu.be/H3o-4kwjt6M)** 
 
 [![Watch the demo](https://img.youtube.com/vi/H3o-4kwjt6M/0.jpg)](https://youtu.be/H3o-4kwjt6M)
 
