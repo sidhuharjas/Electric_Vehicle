@@ -12,7 +12,6 @@ Science Olympiad EV-C is a build-and-drive event. The rules the controller is de
 - It has **no onboard distance sensing** beyond wheel encoders and an IMU — no beacons, no external references, no line to follow.
 - It can optionally route out to a **bonus-can offset** partway through the run for extra points.
 - It has to **stop as close as possible to both a target distance and a target time** — not just distance alone.
-- All of the above has to happen **repeatably, run after run** — a single lucky run doesn't count for much; the score is the vehicle's worst run as much as its best one.
 
 Everything in `src/main.cpp` and the matching logic in `sim.py` exists to satisfy those five constraints at once, which is what most of the tuning surface below is actually fighting for.
 
